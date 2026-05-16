@@ -1,0 +1,196 @@
+/* 全体の設定（フォントや背景色など） */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #1a1a2e;
+    /* 宇宙みたいな濃い青色 */
+    color: #ffffff;
+    /* 文字は白 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* 画面いっぱいの高さにする */
+}
+
+/* アプリの枠組み（四角い箱） */
+.app-container {
+    background-color: #16213e;
+    /* 少し明るい青色 */
+    padding: 30px;
+    border-radius: 15px;
+    /* 角を丸くする */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    /* 水色の光る影をつける */
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* タイトル */
+h1 {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ffff;
+    /* タイトルをかっこよく光らせる */
+    margin-bottom: 30px;
+}
+
+/* 翻訳する場所のレイアウト（横に並べる） */
+.translate-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 入力と出力のエリア */
+.input-area,
+.output-area {
+    flex: 1;
+    /* 同じ大きさにする */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 言語を選ぶメニュー */
+select {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #0f3460;
+    color: white;
+    border: 2px solid #e94560;
+    /* 赤い枠線 */
+    cursor: pointer;
+    /* マウスを乗せたら指のマークにする */
+}
+
+/* 言語をさがす入力欄 */
+.search-input {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #00ffff;
+    background-color: #1a1a2e;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* 検索結果のボタンが並ぶ場所 */
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+    max-height: 100px;
+    overflow-y: auto;
+    /* たくさん出たときはスクロールできるようにする */
+}
+
+/* 検索結果のボタン */
+.result-btn {
+    background-color: #00ffff;
+    color: #1a1a2e;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.result-btn:hover {
+    background-color: white;
+}
+
+/* 文字を入力・表示する箱 */
+textarea {
+    height: 150px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #e2e2e2;
+    color: #333;
+    border: none;
+    resize: none;
+    /* 大きさを変えられないようにする */
+}
+
+/* 翻訳ボタン（真ん中の大きなボタン） */
+.translate-btn {
+    background-color: #e94560;
+    /* かっこいい赤色 */
+    color: white;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    /* 丸いボタンにする */
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+    transition: transform 0.2s;
+    /* 押したときの動きをつける準備 */
+}
+
+/* 翻訳ボタンにマウスを乗せたときの動き */
+.translate-btn:hover {
+    transform: scale(1.1);
+    /* 少し大きくする */
+}
+
+/* 翻訳ボタンを押したときの動き */
+.translate-btn:active {
+    transform: scale(0.9);
+    /* 少し小さくする */
+}
+
+/* 声で聞くボタン */
+.speak-btn {
+    background-color: #0f3460;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+/* 声で聞くボタンにマウスを乗せたとき */
+.speak-btn:hover {
+    background-color: #00ffff;
+    /* 水色にする */
+    color: #0f3460;
+    /* 文字は暗くする */
+}
+
+/* --- ここから新しく追加した「スマホ用」の設定 --- */
+
+/* 画面が600ピクセルより小さいとき（スマホなど）のルール */
+@media (max-width: 600px) {
+    /* 横並びを縦並びに変えるよ */
+    .translate-box {
+        flex-direction: column;
+    }
+
+    /* アプリ全体の余白を少し減らして画面を広く使うよ */
+    .app-container {
+        padding: 15px;
+    }
+
+    /* 翻訳ボタンの上下に隙間を作るよ */
+    .action-area {
+        margin: 10px 0;
+    }
+
+    /* 翻訳ボタンを横いっぱいに広げるよ */
+    .translate-btn {
+        width: 100%;
+        padding: 15px;
+    }
+}

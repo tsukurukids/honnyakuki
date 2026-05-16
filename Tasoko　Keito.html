@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>しゃべる！マルチ翻訳機</title>
+    <!-- CSSファイルを読み込むよ -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <h1>🌍 しゃべる！マルチ翻訳機</h1>
+
+        <div class="translate-box">
+            <!-- 翻訳もとの言葉（左側） -->
+            <div class="input-area">
+                <input type="text" id="source-search" placeholder="言葉をさがす..." class="search-input">
+                <div id="source-results" class="search-results"></div>
+                <select id="source-lang">
+                    <option value="is-IS">アイスランド語</option>
+                    <option value="ar-SA">アラビア語</option>
+                    <option value="it-IT">イタリア語</option>
+                    <option value="id-ID">インドネシア語</option>
+                    <option value="uk-UA">ウクライナ語</option>
+                    <option value="en-US">英語（アメリカ）</option>
+                    <option value="en-GB">英語（イギリス）</option>
+                    <option value="nl-NL">オランダ語</option>
+                    <option value="ko-KR">韓国語</option>
+                    <option value="zh-HK">広東語</option>
+                    <option value="el-GR">ギリシャ語</option>
+                    <option value="hr-HR">クロアチア語</option>
+                    <option value="kl-GL">グリーンランド語</option>
+                    <option value="jam">ジャマイカ語</option>
+                    <option value="es-ES">スペイン語</option>
+                    <option value="sv-SE">スウェーデン語</option>
+                    <option value="sw-KE">スワヒリ語</option>
+                    <option value="th-TH">タイ語</option>
+                    <option value="tl-PH">タガログ語</option>
+                    <option value="bo">チベット語</option>
+                    <option value="zh-CN">中国語（簡体字）</option>
+                    <option value="zh-TW">中国語（繁体字）</option>
+                    <option value="de-DE">ドイツ語</option>
+                    <option value="tr-TR">トルコ語</option>
+                    <option value="ja-JP">日本語</option>
+                    <option value="ne-NP">ネパール語</option>
+                    <option value="no-NO">ノルウェー語</option>
+                    <option value="hi-IN">ヒンディー語</option>
+                    <option value="fj">フィジー語</option>
+                    <option value="fi-FI">フィンランド語</option>
+                    <option value="fr-FR">フランス語</option>
+                    <option value="he-IL">ヘブライ語</option>
+                    <option value="vi-VN">ベトナム語</option>
+                    <option value="fa-IR">ペルシア語</option>
+                    <option value="pl-PL">ポーランド語</option>
+                    <option value="pt-PT">ポルトガル語</option>
+                    <option value="ms-MY">マレー語</option>
+                    <option value="mn">モンゴル語</option>
+                    <option value="ru-RU">ロシア語</option>
+                </select>
+                <textarea id="input-text" placeholder="ここに翻訳したい言葉を入れてね"></textarea>
+                <button id="speak-input-btn" class="speak-btn">🔊 声で聞く</button>
+            </div>
+
+            <!-- 真ん中の翻訳ボタン -->
+            <div class="action-area">
+                <button id="translate-btn" class="translate-btn">翻訳する！ ➡️</button>
+            </div>
+
+            <!-- 翻訳された言葉（右側） -->
+            <div class="output-area">
+                <input type="text" id="target-search" placeholder="言葉をさがす..." class="search-input">
+                <div id="target-results" class="search-results"></div>
+                <select id="target-lang">
+                    <option value="is-IS">アイスランド語</option>
+                    <option value="ar-SA">アラビア語</option>
+                    <option value="it-IT">イタリア語</option>
+                    <option value="id-ID">インドネシア語</option>
+                    <option value="uk-UA">ウクライナ語</option>
+                    <option value="en-US">英語（アメリカ）</option>
+                    <option value="en-GB">英語（イギリス）</option>
+                    <option value="nl-NL">オランダ語</option>
+                    <option value="ko-KR">韓国語</option>
+                    <option value="zh-HK">広東語</option>
+                    <option value="el-GR">ギリシャ語</option>
+                    <option value="hr-HR">クロアチア語</option>
+                    <option value="kl-GL">グリーンランド語</option>
+                    <option value="jam">ジャマイカ語</option>
+                    <option value="es-ES">スペイン語</option>
+                    <option value="sv-SE">スウェーデン語</option>
+                    <option value="sw-KE">スワヒリ語</option>
+                    <option value="th-TH">タイ語</option>
+                    <option value="tl-PH">タガログ語</option>
+                    <option value="bo">チベット語</option>
+                    <option value="zh-CN">中国語（簡体字）</option>
+                    <option value="zh-TW">中国語（繁体字）</option>
+                    <option value="de-DE">ドイツ語</option>
+                    <option value="tr-TR">トルコ語</option>
+                    <option value="ja-JP">日本語</option>
+                    <option value="ne-NP">ネパール語</option>
+                    <option value="no-NO">ノルウェー語</option>
+                    <option value="hi-IN">ヒンディー語</option>
+                    <option value="fj">フィジー語</option>
+                    <option value="fi-FI">フィンランド語</option>
+                    <option value="fr-FR">フランス語</option>
+                    <option value="he-IL">ヘブライ語</option>
+                    <option value="vi-VN">ベトナム語</option>
+                    <option value="fa-IR">ペルシア語</option>
+                    <option value="pl-PL">ポーランド語</option>
+                    <option value="pt-PT">ポルトガル語</option>
+                    <option value="ms-MY">マレー語</option>
+                    <option value="mn">モンゴル語</option>
+                    <option value="ru-RU">ロシア語</option>
+                </select>
+                <textarea id="output-text" placeholder="ここに翻訳された言葉が出るよ" readonly></textarea>
+                <button id="speak-output-btn" class="speak-btn">🔊 声で聞く</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScriptファイルを読み込むよ -->
+    <script src="script.js"></script>
+</body>
+
+</html>
