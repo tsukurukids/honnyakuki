@@ -7,6 +7,10 @@
     <title>しゃべる！マルチ翻訳機</title>
     <!-- CSSファイルを読み込むよ -->
     <link rel="stylesheet" href="style.css">
+    <!-- PWAの設定ファイルを読み込むよ -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4A90E2">
+    <link rel="apple-touch-icon" href="icon.png">
 </head>
 
 <body>
@@ -121,6 +125,17 @@
 
     <!-- JavaScriptファイルを読み込むよ -->
     <script src="script.js"></script>
+
+    <!-- PWAのサービスワーカーを登録するよ -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then((reg) => console.log('PWAの準備ができたよ！', reg))
+                    .catch((err) => console.log('PWAの準備に失敗しちゃった...', err));
+            });
+        }
+    </script>
 </body>
 
 </html>

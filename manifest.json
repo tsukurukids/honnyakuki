@@ -1,0 +1,16 @@
+{
+  "name": "しゃべる！マルチ翻訳機",
+  "short_name": "翻訳機",
+  "description": "いろいろな国の言葉を翻訳してくれる、便利なアプリだよ！",
+  "start_url": "Tasoko　Keito.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4A90E2",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
