@@ -94,13 +94,13 @@ function setupSearch(searchId, selectId, resultsId) {
     // 検索ボックスに文字が入力されたら動くルール
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase(); // 入力された文字
-        
+
         // 検索結果のボタンを一旦きれいに消す
         resultsDiv.innerHTML = '';
-        
+
         // メニューの中身も一旦空っぽにする（絞り込みのため）
         select.innerHTML = '';
-        
+
         // もし何も入力されていなかったら、全部の言葉をメニューに戻して終わる
         if (query === '') {
             allOptions.forEach(opt => select.appendChild(opt));
@@ -117,7 +117,7 @@ function setupSearch(searchId, selectId, resultsId) {
                 const btn = document.createElement('button');
                 btn.textContent = option.text;
                 btn.className = 'result-btn';
-                
+
                 // ボタンが押されたときのルール
                 btn.onclick = () => {
                     select.value = option.value; // その言葉を選ぶ

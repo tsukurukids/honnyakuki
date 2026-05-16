@@ -173,6 +173,7 @@ textarea {
 
 /* 画面が600ピクセルより小さいとき（スマホなど）のルール */
 @media (max-width: 600px) {
+
     /* 横並びを縦並びに変えるよ */
     .translate-box {
         flex-direction: column;
